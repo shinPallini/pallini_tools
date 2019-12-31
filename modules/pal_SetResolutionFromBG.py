@@ -68,19 +68,3 @@ class PalliniTools_PT_CustomPanel(bpy.types.Panel):
         # ボタンを追加
         layout.label(text="解像度を下絵にフィット:")
         layout.operator(PalliniTools_OT_SetResolutionFromBG.bl_idname, text="実行")
-
-classes = [
-    PalliniTools_OT_SetResolutionFromBG,
-    PalliniTools_PT_CustomPanel,
-]
-
-def register():
-    for c in classes:
-        bpy.utils.register_class(c)
-
-def unregister():
-    for c in classes:
-        bpy.utils.unregister_class(c)
-
-if __name__ == "__main__":
-    register()
