@@ -1,1 +1,5 @@
 # pallini_tools
+
+Blenderでの操作を効率化するaddonをまとめています。
+
+ご利用は自己責任でお願いします。palliniは本addonを使用して発生したいかなる損害の責任も負いません。
