@@ -15,7 +15,7 @@ bl_info = {
     "category": "Object"
 }
 
-class PalliniTools_OT_SetResolutionFromBG(bpy.types.Operator):
+class PALLINITOOLS_OT_SetResolutionFromBG(bpy.types.Operator):
 
     bl_idname = "pallinitools.setresolutionfrombg"
     bl_label = "SetResolutionFromBG"
@@ -49,7 +49,7 @@ class PalliniTools_OT_SetResolutionFromBG(bpy.types.Operator):
             bpy.context.scene.render.resolution_y = 1080 * self.multiply
         return {'FINISHED'}
 
-class PalliniTools_PT_CustomPanel(bpy.types.Panel):
+class PALLINITOOLS_PT_CustomPanel(bpy.types.Panel):
 
     bl_label = "Pallini_ToolList"         # パネルのヘッダに表示される文字列
     bl_space_type = 'VIEW_3D'           # パネルを登録するスペース
@@ -78,4 +78,4 @@ class PalliniTools_PT_CustomPanel(bpy.types.Panel):
 
         # ボタンを追加
         layout.label(text="解像度を下絵にフィット:")
-        layout.operator(PalliniTools_OT_SetResolutionFromBG.bl_idname, text="実行")
+        layout.operator(PALLINITOOLS_OT_SetResolutionFromBG.bl_idname, text="実行")

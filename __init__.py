@@ -23,8 +23,8 @@ import bpy
 
 # Blenderに登録するクラス
 classes = [
-    pal_SetResolutionFromBG.PalliniTools_OT_SetResolutionFromBG,
-    pal_SetResolutionFromBG.PalliniTools_PT_CustomPanel,
+    pal_SetResolutionFromBG.PALLINITOOLS_OT_SetResolutionFromBG,
+    pal_SetResolutionFromBG.PALLINITOOLS_PT_CustomPanel,
 ]
 
 
