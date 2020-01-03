@@ -20,6 +20,15 @@ class PalliniTools_OT_SetResolutionFromBG(bpy.types.Operator):
     bl_label = "SetResolutionFromBG"
     bl_description = "下絵のピクセル数に合わせて解像度を設定する"
     bl_options = {'REGISTER', 'UNDO'}
+    
+    # property
+    multiply: FloatProperty()
+    # invoke
+    def invoke(self, context, event):
+        print("invoke")
+        self.multiply = 1.0
+        
+        return self.execute(context)
 
     def execute(self, context):
         cam_name = context.scene.camera.name
@@ -28,9 +37,10 @@ class PalliniTools_OT_SetResolutionFromBG(bpy.types.Operator):
         
         if images:
             bg_image = images[0].image
+            resolutions = [r * self.multiply for r in bg_image.size]
 
-            bpy.context.scene.render.resolution_x = bg_image.size[0] + bg_image.size[0]%2
-            bpy.context.scene.render.resolution_y = bg_image.size[1] + bg_image.size[1]%2
+            bpy.context.scene.render.resolution_x = resolutions[0] + resolutions[0]%2
+            bpy.context.scene.render.resolution_y = resolutions[1] + resolutions[1]%2
 
             print("Script Executed")
         else:
