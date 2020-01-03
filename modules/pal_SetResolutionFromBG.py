@@ -45,8 +45,8 @@ class PalliniTools_OT_SetResolutionFromBG(bpy.types.Operator):
 
             print("Script Executed")
         else:
-            bpy.context.scene.render.resolution_x = 1920　* self.multiply
-            bpy.context.scene.render.resolution_y = 1080　* self.multiply
+            bpy.context.scene.render.resolution_x = 1920 * self.multiply
+            bpy.context.scene.render.resolution_y = 1080 * self.multiply
         return {'FINISHED'}
 
 class PalliniTools_PT_CustomPanel(bpy.types.Panel):
